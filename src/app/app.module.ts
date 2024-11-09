@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+import { CountdownClockComponent } from './components/CountdownClock/countdown-clock.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CountdownClockComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
