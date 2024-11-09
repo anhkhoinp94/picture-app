@@ -1,39 +1,46 @@
-import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 
 @Component({
-    selector: 'app-countdown-clock',
-    templateUrl: './countdown-clock.component.html',
-    styleUrls: ['./countdown-clock.component.css']
+  selector: 'app-countdown-clock',
+  templateUrl: './countdown-clock.component.html',
+  styleUrls: ['./countdown-clock.component.css'],
 })
 export class CountdownClockComponent implements OnInit, OnDestroy {
-    timeLeft: number = 60;
-    interval: any;
+  timeNeed: number = 60;
+  timeLeft: number = this.timeNeed;
+  interval: any;
 
-    @Output() resetEvent = new EventEmitter<void>();
+  @Output() resetEvent = new EventEmitter<void>();
 
-    ngOnInit(): void {
-        this.startCountdown();
+  ngOnInit(): void {
+    this.startCountdown();
+  }
+
+  startCountdown() {
+    this.interval = setInterval(() => {
+      if (this.timeLeft > 0) {
+        this.timeLeft--;
+      } else {
+        clearInterval(this.interval);
+      }
+    }, 1000);
+  }
+
+  ngOnDestroy(): void {
+    if (this.interval) {
+      clearInterval(this.interval);
     }
+  }
 
-    startCountdown() {
-        this.interval = setInterval(() => {
-            if (this.timeLeft > 0) {
-                this.timeLeft--;
-            } else {
-                clearInterval(this.interval);
-            }
-        }, 1000);
-    }
-
-    ngOnDestroy(): void {
-        if (this.interval) {
-            clearInterval(this.interval);
-        }
-    }
-
-    resetCountdown() {
-        clearInterval(this.interval); // Stop current countdown
-        this.timeLeft = 60; // Reset the time
-        this.startCountdown(); // Restart countdown
-    }
+  resetCountdown() {
+    clearInterval(this.interval);
+    this.timeLeft = this.timeNeed;
+    this.startCountdown();
+  }
 }
