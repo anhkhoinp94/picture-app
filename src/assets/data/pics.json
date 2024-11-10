@@ -8,5 +8,15 @@
     "id": 2,
     "picName": "pic002.png",
     "sample": "The picture depicts a biker dressed in an orange safety outfit and helmet, riding his blue bike on a narrow pathway with one hand raised, assuming that he is trying to get someone’s attention."
+  },
+  {
+    "id": 3,
+    "picName": "pic003.png",
+    "sample": "The image illustrates two people standing next to a large telescope, both looking at the wallet in the female’s hands. The woman is probably preparing cash to pay the man for the rental service."
+  },
+  {
+    "id": 4,
+    "picName": "pic004.png",
+    "sample": "In this image, a group of five people are kneeling in front of a mature man dressed in a black suit with one hand raised. They are probably seeking his help with something important."
   }
 ]
