@@ -74,6 +74,9 @@ export class AppComponent {
   showSample() {
     this.isShowSample = !this.isShowSample;
     this.resetCountdown();
+    if (!this.isShowSample) {
+      this.userText = '';
+    }
   }
 
   resetCountdown() {
