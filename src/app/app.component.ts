@@ -58,25 +58,22 @@ export class AppComponent {
 
   next() {
     this.id = this.getRandomArbitrary(this.min, this.max);
-
     let pic = this.pics.find((obj) => {
       return obj.id === this.id;
     });
-    console.log('pic', pic);
     if (pic) {
       this.selectedPic = pic;
       this.picName = pic.picName;
       this.sample = pic.sample;
     }
-    console.log('this.picName', this.picName);
-    console.log('this.sample', this.sample);
     this.resetCountdown();
     this.isShowSample = false;
-    this.userText = "";
+    this.userText = '';
   }
 
   showSample() {
     this.isShowSample = true;
+    this.resetCountdown();
   }
 
   resetCountdown() {
