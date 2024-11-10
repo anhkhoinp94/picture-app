@@ -72,7 +72,7 @@ export class AppComponent {
   }
 
   showSample() {
-    this.isShowSample = true;
+    this.isShowSample = !this.isShowSample;
     this.resetCountdown();
   }
 
