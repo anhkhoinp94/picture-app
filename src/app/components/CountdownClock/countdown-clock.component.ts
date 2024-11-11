@@ -12,7 +12,7 @@ import {
   styleUrls: ['./countdown-clock.component.css'],
 })
 export class CountdownClockComponent implements OnInit, OnDestroy {
-  timeNeed: number = 60;
+  timeNeed: number = 61;
   timeLeft: number = this.timeNeed;
   interval: any;
 
